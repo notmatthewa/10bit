@@ -1,8 +1,5 @@
 <template>
-  <div>
-    <h1>Vue.js</h1>
-    <p>{{ message }}</p>
-  </div>
+  <NuxtPage/>
 </template>
 
 <script>
