@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen bg-background text-text transition-all duration-300 overflow-x-hidden">
-    <Navbar />
+    <Navbar active-tab="Home" />
     
     <main class="mt-24 px-[5%]">
       <section class="hero h-[85vh] flex flex-col justify-center items-start max-w-7xl mx-auto">
@@ -12,10 +12,10 @@
         </p>
         <div class="flex items-center gap-4 animate-fadeIn opacity-0" style="animation-delay: 0.6s;">
           <a href="#" class="inline-flex items-center bg-accent text-white px-8 py-4 rounded gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20">
-            Get started →
+            Contact us →
           </a>
           <a href="#" class="inline-flex items-center bg-transparent text-text px-8 py-4 rounded gap-2 font-semibold transition-all duration-300 border border-text hover:-translate-y-0.5 hover:bg-secondary">
-            See documentation
+            See projects
           </a>
         </div>
       </section>
@@ -27,8 +27,8 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="feature-card bg-secondary p-8 rounded-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
             <div class="text-4xl text-accent mb-6">◎</div>
-            <h3 class="text-2xl font-semibold mb-4">Precision Engineering</h3>
-            <p>Enhanced accuracy and performance with our 10-bit processing architecture.</p>
+            <h3 class="text-2xl font-semibold mb-4">Wide Range of Solutions</h3>
+            <p>From cloud computing to AI, we offer a comprehensive suite of services.</p>
           </div>
           <div class="feature-card bg-secondary p-8 rounded-lg transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
             <div class="text-4xl text-accent mb-6">◉</div>
@@ -56,31 +56,7 @@ import Navbar from '~/components/Navbar.vue';
 // Component imports are handled automatically by Nuxt
 </script>
 
-<style>
-:root {
-  --background: #fafafa;
-  --text: #1a1a1a;
-  --accent: #FF5722;
-  --secondary-accent: #0066ff;
-  --secondary: #f0f0f0;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #121212;
-    --text: #f0f0f0;
-    --secondary: #1a1a1a;
-  }
-}
-
-.bg-background {
-  background-color: var(--background);
-}
-
-.text-text {
-  color: var(--text);
-}
-
+<style scoped>
 .bg-secondary-accent {
   background-color: var(--secondary-accent);
 }
