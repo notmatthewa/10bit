@@ -24,25 +24,7 @@ export default {
         title: "Join Our Team",
         description: "We are always looking for talented developers to join our team. If you are passionate about technology and innovation, we would love to hear from you.",
         contact: "Contact us →",
-        copyright: "© 2025 10 Bit Technology. All rights reserved.",
-        featured: [
-          {
-            name: "Carlos Hernandez",
-            initials: "CH",
-            title: "Software Engineer",
-            bio: "Specializes in creating responsive and accessible interfaces for full-stack applications.",
-            skills: ["Nuxt.js", "Vue", "Python", "Tailwind"],
-            profileUrl: "https://www.linkedin.com/in/carlos-hernandez-8b0b552a9/"
-          },
-          {
-            name: "Matthew Anderson",
-            initials: "MA",
-            title: "API Developer",
-            bio: "Building scalable API solutions for modern web and mobile applications.",
-            skills: ["REST", "FastAPI", "Python", "Kubernetes"],
-            profileUrl: "https://www.linkedin.com/in/matthew-anderson-a6254a192/"
-          }
-        ]
+        copyright: "© 2025 10 Bit Technology. All rights reserved."
       }
     },
     es: {
@@ -66,25 +48,7 @@ export default {
         title: "Únete a nuestro equipo",
         description: "Siempre estamos buscando desarrolladores talentosos para unirse a nuestro equipo. Si eres apasionado por la tecnología y la innovación, nos encantaría saber de ti.",
         contact: "Contáctanos →",
-        copyright: "© 2025 10 Bit Technology. Todos los derechos reservados.",
-        featured: [
-          {
-            name: "Carlos Hernandez",
-            initials: "CH",
-            title: "Ingeniero de Software",
-            bio: "Especializado en crear interfaces accesibles y responsivas para aplicaciones full-stack.",
-            skills: ["Nuxt.js", "Vue", "Python", "Tailwind"],
-            profileUrl: "https://www.linkedin.com/in/carlos-hernandez-8b0b552a9/"
-          },
-          {
-            name: "Matthew Anderson",
-            initials: "MA",
-            title: "Desarrollador de API",
-            bio: "Construyendo soluciones API escalables para aplicaciones web y móviles modernas.",
-            skills: ["REST", "FastAPI", "Python", "Kubernetes"],
-            profileUrl: "https://www.linkedin.com/in/matthew-anderson-a6254a192/"
-          }
-        ]
+        copyright: "© 2025 10 Bit Technology. Todos los derechos reservados."
       }
     }
   }
