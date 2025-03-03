@@ -1,3 +1,7 @@
-name = "10bit"
+name = "your-app-name"
 main = ".output/server/index.mjs"
 compatibility_date = "2025-03-03"
+nodejs_compat = true
+
+[build]
+command = "npm run build"
