@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', "nitro-cloudflare-dev"],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', "nitro-cloudflare-dev", '@nuxtjs/i18n'],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -33,5 +33,20 @@ export default defineNuxtConfig({
     prerender: {
       autoSubfolderIndex: false
     }
+  },
+  i18n: {
+    locales: [
+      { code: 'en', iso: 'en-US', name: 'English' },
+      { code: 'es', iso: 'es-ES', name: 'Español' }
+    ],
+    defaultLocale: 'en',
+    strategy: 'prefix', // Uses /en/ and /es/
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'i18n_redirected',
+      alwaysRedirect: true,
+      fallbackLocale: 'en' // Fallback if detection fails
+    },
+    vueI18n: './i18n.config.ts' // External translation file
   }
 })
