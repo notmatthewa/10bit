@@ -1,6 +1,7 @@
 name = "10bit"
 main = "dist/"
 compatibility_date = "2025-03-03"
+pages_build_output_dir = "dist"
 
 [build]
 command = "npm run build"
