@@ -4,8 +4,8 @@
 
     <main class="mt-24 px-[5%]">
       <section class="hero h-[85vh] flex flex-col justify-center items-start max-w-7xl mx-auto">
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6 bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent transition-all duration-300 animate-fadeIn opacity-0" style="animation-delay: 0.2s;">
-          {{ $t('home.title') }}
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight pb-6 pr-6 bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent transition-all duration-300 animate-fadeIn opacity-0" style="animation-delay: 0.2s;">
+          {{ $t('home.title.first_line') }} <br /> {{ $t('home.title.second_line') }}
         </h1>
         <p class="text-xl md:text-2xl max-w-[600px] mb-12 animate-fadeIn opacity-0" style="animation-delay: 0.4s;">
           {{ $t('home.description') }}

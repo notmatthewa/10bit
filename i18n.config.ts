@@ -5,7 +5,10 @@ export default {
   messages: {
     en: {
       home: {
-        title: "Digital innovation at 10-bit precision.",
+        title: {
+          first_line: "Digital innovation",
+          second_line: "at 10-bit precision."
+        },
         description: "Pioneering solutions with cutting-edge technology to transform the digital experience of tomorrow.",
         contact: "Contact us →",
         projects: "See projects",
@@ -29,7 +32,10 @@ export default {
     },
     es: {
       home: {
-        title: "Innovación digital con precisión de 10 bits.",
+        title: {
+          first_line: "Innovación digital",
+          second_line: "con precisión de 10 bits."
+        },
         description: "Soluciones innovadoras con tecnología de vanguardia para transformar la experiencia digital del mañana.",
         contact: "Contáctanos →",
         projects: "Ver proyectos",
