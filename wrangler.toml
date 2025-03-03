@@ -1,5 +1,5 @@
 name = "your-app-name"
-main = ".output/server/index.mjs"
+main = ".nuxt/dist/server/server.mjs"
 compatibility_date = "2025-03-03"
 nodejs_compat = true
 
