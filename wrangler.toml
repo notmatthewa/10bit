@@ -1,4 +1,4 @@
-name = "your-app-name"
+name = "10bit"
 main = ".nuxt/dist/server/server.mjs"
 compatibility_date = "2025-03-03"
 nodejs_compat = true
