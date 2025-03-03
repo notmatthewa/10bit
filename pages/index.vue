@@ -7,7 +7,7 @@
         <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6 bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent transition-all duration-300 animate-fadeIn opacity-0" style="animation-delay: 0.2s;">
           Digital innovation<br>at 10-bit precision.
         </h1>
-        <p class="text-xl md:text-2xl max-w-[600px] mb-12 opacity-80 animate-fadeIn opacity-0" style="animation-delay: 0.4s;">
+        <p class="text-xl md:text-2xl max-w-[600px] mb-12 animate-fadeIn opacity-0" style="animation-delay: 0.4s;">
           Pioneering solutions with cutting-edge technology to transform the digital experience of tomorrow.
         </p>
         <div class="flex items-center gap-4 animate-fadeIn opacity-0" style="animation-delay: 0.6s;">
