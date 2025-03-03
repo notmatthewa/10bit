@@ -23,7 +23,8 @@ export default defineNuxtConfig({
         { name: 'description', content: 'Pioneering solutions with cutting-edge technology to transform the digital experience of tomorrow.' }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
       ]
     }
   },
