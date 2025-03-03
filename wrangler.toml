@@ -1,5 +1,5 @@
 name = "10bit"
-main = ".nuxt/dist/server/server.mjs"
+main = "dist/"
 compatibility_date = "2025-03-03"
 
 [build]
