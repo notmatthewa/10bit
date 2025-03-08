@@ -9,8 +9,8 @@
     <nav>
       <ul class="flex items-center md:gap-8 gap-4">
         <li v-for="item in navItems" :key="item.text">
-          <NavLink 
-            :href="item.href" 
+          <NavLink
+            :href="item.href"
             :active="activeTab === item.text"
           >
             {{ item.text }}
@@ -33,9 +33,9 @@ defineProps({
 
 const navItems = [
   { text: 'Home', href: '/' },
-  { text: 'Solutions', href: '#' },
+  { text: 'Solutions', href: '/solutions' },
   { text: 'Developers', href: '/developers' },
-  { text: 'Pricing', href: '#' }
+  { text: 'Contact Us', href: '#' }
 ];
 
 // Scroll effect for header
