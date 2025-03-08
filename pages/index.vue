@@ -44,23 +44,7 @@
       </section>
     </main>
 
-    <footer class="py-12 px-[5%] text-center">
-      <div class="w-full grid grid-cols-1 place-content-center place-items-center mb-4">
-        <img class="w-8 h-8 rounded" src="~/assets/logos/Logo Glyph.png" />
-      </div>
-      <p class="text-sm opacity-60 mb-4">{{ $t('home.copyright') }}</p>
-      <div class="flex justify-center items-center">
-        <button @click="$i18n.locale = 'en'" class="flex items-center gap-2 px-4 py-2 rounded text-xl">
-          🇺🇸
-        </button>
-        <button @click="$i18n.locale = 'en'" class="flex items-center gap-2 py-2 rounded text-xs">
-          ❤️
-        </button>
-        <button @click="$i18n.locale = 'es'" class="flex items-center gap-2 px-4 py-2 rounded text-xl">
-          🇲🇽
-        </button>
-      </div>
-    </footer>
+    <Footer />
 
   </div>
 </template>
