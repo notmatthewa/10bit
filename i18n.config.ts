@@ -27,7 +27,9 @@ export default {
         title: "Join Our Team",
         description: "We are always looking for talented developers to join our team. If you are passionate about technology and innovation, we would love to hear from you.",
         contact: "Contact us →",
-        copyright: "© 2025 10 Bit Technology. All rights reserved."
+        copyright: "© 2025 10 Bit Technology. All rights reserved.",
+        header: "Meet The Team",
+        subheader: "Our team of experts is dedicated to delivering innovative solutions that drive business growth and success.",
       }
     },
     es: {
@@ -54,7 +56,9 @@ export default {
         title: "Únete a nuestro equipo",
         description: "Siempre estamos buscando desarrolladores talentosos para unirse a nuestro equipo. Si eres apasionado por la tecnología y la innovación, nos encantaría saber de ti.",
         contact: "Contáctanos →",
-        copyright: "© 2025 10 Bit Technology. Todos los derechos reservados."
+        copyright: "© 2025 10 Bit Technology. Todos los derechos reservados.",
+        header: "Conoce al equipo", // TODO: CARLOS YOU MIGHT WANT TO AUDIT THIS TBH
+        subheader: "Nuestro equipo de expertos está dedicado a ofrecer soluciones innovadoras que impulsan el crecimiento y el éxito empresarial." // TODO: THIS TOO
       }
     }
   }

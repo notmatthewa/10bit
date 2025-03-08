@@ -4,6 +4,12 @@
 
     <main class="pt-32 px-[5%] pb-20">
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-7xl mx-auto">
+        <!-- header -->
+        <header class="text-center">
+          <h1 class="text-4xl font-bold mb-4">{{ $t('developers.header') }}</h1>
+          <p class="text-lg opacity-80">{{ $t('developers.subheader') }}</p>
+        </header>
+
         <!-- DevCard Container -->
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
           <DevCard v-for="(dev, index) in localizedDevelopers" :key="index" :dev="dev" />
