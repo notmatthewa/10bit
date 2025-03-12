@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', "nitro-cloudflare-dev", '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', "nitro-cloudflare-dev", '@nuxtjs/i18n', '@nuxtjs/turnstile', '@nuxt/scripts'],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -40,13 +40,24 @@ export default defineNuxtConfig({
       { code: 'es', iso: 'es-ES', name: 'Español' }
     ],
     defaultLocale: 'en',
-    strategy: 'prefix', // Uses /en/ and /es/
+    strategy: 'prefix_except_default', // Uses /en/ and /es/
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
       fallbackLocale: 'en' // Fallback if detection fails
     },
-    vueI18n: './i18n.config.ts' // External translation file
+    vueI18n: 'i18n.config.ts' // External translation file
+  },
+  turnstile: {
+    siteKey: '0x4AAAAAABAC2jiaOKMQfOzb',
+    addValidateEndpoint: true
+  },
+  runtimeConfig: {
+    turnstile: {
+      // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
+      // environment variable.
+      secretKey: '0x4AAAAAABAC2kH2w4HVJ44mUCdznq-MJGc',
+    },
   }
 })

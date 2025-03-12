@@ -35,7 +35,7 @@ const navItems = [
   { text: 'Home', href: '/' },
   { text: 'Solutions', href: '/solutions' },
   { text: 'Developers', href: '/developers' },
-  { text: 'Contact Us', href: '#' }
+  { text: 'Contact Us', href: '/contact' }
 ];
 
 // Scroll effect for header
