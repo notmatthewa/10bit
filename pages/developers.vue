@@ -46,6 +46,7 @@
         title: 'Software Engineer',
         bio: 'Specializes in creating responsive and accessible interfaces for full-stack applications.',
         skills: ['Nuxt.js', 'Vue', 'Python', 'Tailwind'],
+        pl: 'Visit Profile',
         profileUrl: 'https://www.linkedin.com/in/carlos-hernandez-8b0b552a9/'
       },
       {
@@ -54,6 +55,7 @@
         title: 'API Developer',
         bio: 'Building scalable API solutions for modern web and mobile applications.',
         skills: ['REST', 'FastAPI', 'Python', 'Kubernetes'],
+        pl: 'Visit Profile',
         profileUrl: 'https://www.linkedin.com/in/matthew-anderson-a6254a192/'
       }
     ],
@@ -64,6 +66,7 @@
         title: "Ingeniero de Software",
         bio: "Especializado en crear interfaces accesibles y responsivas para aplicaciones full-stack.",
         skills: ["Nuxt.js", "Vue", "Python", "Tailwind"],
+        pl: 'Ver Perfil',
         profileUrl: "https://www.linkedin.com/in/carlos-hernandez-8b0b552a9/"
       },
       {
@@ -72,6 +75,7 @@
         title: "Desarrollador de API",
         bio: "Construyendo soluciones API escalables para aplicaciones web y móviles modernas.",
         skills: ["REST", "FastAPI", "Python", "Kubernetes"],
+        pl: 'Ver Perfil',
         profileUrl: "https://www.linkedin.com/in/matthew-anderson-a6254a192/"
       }
     ]

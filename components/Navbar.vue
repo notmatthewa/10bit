@@ -1,6 +1,6 @@
 <template>
   <header
-    class="fixed top-0 w-full px-[5%] py-8 flex justify-between items-center z-50 backdrop-filter backdrop-blur-lg bg-background/80 transition-all duration-300"
+    class="fixed top-0 w-full px-[5%] py-8 flex justify-between items-center z-50 backdrop-filter backdrop-blur-lg bg-background transition-all duration-300"
     :class="{ 'py-4': scrolled }">
     <div class="logo text-2xl font-bold tracking-tighter can-click" @click="$router.push('/')">
       <img src="~/assets/logos/Single Logo White.png" alt="10 Bit Technology" class="hidden sm:block w-24 md:w-32">

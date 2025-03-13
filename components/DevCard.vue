@@ -11,12 +11,12 @@
       <p class="mb-5">{{ dev.bio }}</p>
       <div class="flex no-wrap overflow-x-auto mb-6 skills-container">
         <span v-for="skill in dev.skills" :key="skill"
-          class="text-xs py-1 px-3 skill text-accent">
+          class="text-xs py-1 px-3 skill text-accent bg-accent">
           {{ skill }}
         </span>
       </div>
       <a :href="dev.profileUrl" class="inline-flex items-center text-accent font-medium hover:underline" target="_blank" rel="noopener noreferrer">
-        View Profile 
+        {{dev.pl}}
         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
         </svg>
