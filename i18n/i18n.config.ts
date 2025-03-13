@@ -138,6 +138,30 @@ export default defineI18nConfig(() => ({
           contact_sales: "Contact Sales"
         },
         copyright: "© 2025 10 Bit Technology. All rights reserved."
+      },
+      contact: {
+        title: "Get in Touch",
+        description: "Have a challenge for us? Let's discuss how 10 Bit Technology can create the perfect solution for your needs.",
+        form: {
+          title: "Send Us a Message",
+          first_name: "First Name",
+          last_name: "Last Name",
+          email: "Email Address",
+          phone: "Phone Number",
+          phone_optional: "(Optional)",
+          company: "Company",
+          company_optional: "(Optional)",
+          project_type: "What can we help you with?",
+          project_placeholder: "Select a service",
+          message: "Project Details",
+          message_placeholder:
+            "Tell us about your project, challenge, or what you're looking to accomplish...",
+          budget: "Budget Range",
+          budget_optional: "(Optional)",
+          timeframe: "How soon do you need this solution?",
+          submit: "Send Message",
+          processing: "Processing...",
+        },
       }
     },
     es: {
@@ -276,6 +300,30 @@ export default defineI18nConfig(() => ({
           contact_sales: "Contactar con ventas"
         },
         copyright: "© 2025 10 Bit Technology. Todos los derechos reservados."
+      },
+      contact: {
+        title: "Ponte en Contacto",
+        description: "¿Tienes un desafío para nosotros? Hablemos sobre cómo 10 Bit Technology puede crear la solución perfecta para tus necesidades.",
+        form: {
+          title: "Envíanos un Mensaje",
+          first_name: "Nombre",
+          last_name: "Apellido",
+          email: "Correo Electrónico",
+          phone: "Número de Teléfono",
+          phone_optional: "(Opcional)",
+          company: "Empresa",
+          company_optional: "(Opcional)",
+          project_type: "¿En qué podemos ayudarte?",
+          project_placeholder: "Selecciona un servicio",
+          message: "Detalles del Proyecto",
+          message_placeholder:
+            "Cuéntanos sobre tu proyecto, desafío o lo que buscas lograr...",
+          budget: "Rango de Presupuesto",
+          budget_optional: "(Opcional)",
+          timeframe: "¿En cuánto tiempo necesitas esta solución?",
+          submit: "Enviar Mensaje",
+          processing: "Procesando...",
+        },
       }
     }
   }
