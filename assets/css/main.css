@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer base {
+
     :root {
         --background: #fafafa;
         --text: #1a1a1a;
@@ -30,49 +31,11 @@
         line-height: 1.6;
     }
 
-    /* Custom utility classes */
-    .bg-background {
-        background-color: var(--background)
-    }
-
-    .bg-background\/80 {
-        background-color: var(--background)
-    }
-
-    .text-text {
-        color: var(--text)
-    }
-
-    .bg-accent {
+    .bg-accent-gradient {
         background: linear-gradient(90deg, var(--accent), var(--secondary-accent));
     }
 
-    .text-hover-grey {
-        color: #ccc;
-    }
-
-    .text-accent {
-        color: var(--accent);
-    }
-
-    .bg-secondary {
-        background-color: var(--secondary);
-    }
-      
-    .border-text {
-        border-color: var(--text);
-    }
-
-    .from-accent {
-        --tw-gradient-from: var(--accent);
-        --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-    }
-
-    .to-secondary-accent {
-        --tw-gradient-to: var(--secondary-accent);
-    }
-
     .can-click {
-        cursor: pointer;
+        @apply cursor-pointer;
     }
 }

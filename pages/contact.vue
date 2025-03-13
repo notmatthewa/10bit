@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-background">
+  <div class="min-h-screen bg-background text-text">
     <Navbar activeTab="Contact Us" />
 
     <main class="pt-32 px-[5%] pb-20">
@@ -8,10 +8,10 @@
         <div class="text-center section-spacing">
           <h1
             class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-tight mb-6 bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent">
-            Get in Touch
+            {{ $t("contact.title") }}
           </h1>
           <p class="text-xl max-w-3xl mx-auto opacity-80">
-            Have a challenge for us? Let's discuss how 10 Bit Technology can create the perfect solution for your needs.
+            {{ $t("contact.description") }}
           </p>
         </div>
 
@@ -31,7 +31,7 @@
                       type="text"
                       id="firstName"
                       v-model="form.firstName"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
                       placeholder="Your first name"
                       required
                     />
@@ -42,7 +42,7 @@
                       type="text"
                       id="lastName"
                       v-model="form.lastName"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
                       placeholder="Your last name"
                       required
                     />
@@ -57,7 +57,7 @@
                       type="email"
                       id="email"
                       v-model="form.email"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
                       placeholder="you@example.com"
                       required
                     />
@@ -68,7 +68,7 @@
                       type="tel"
                       id="phone"
                       v-model="form.phone"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
                       placeholder="(000) 000-0000"
                     />
                   </div>
@@ -82,7 +82,7 @@
                       type="text"
                       id="company"
                       v-model="form.company"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
                       placeholder="Your company name"
                     />
                   </div>
@@ -91,7 +91,7 @@
                     <select
                       id="projectType"
                       v-model="form.projectType"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors appearance-none"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors appearance-none"
                       required
                     >
                       <option value="" disabled selected>Select a service</option>
@@ -113,7 +113,7 @@
                     id="message"
                     v-model="form.message"
                     rows="5"
-                    class="w-full px-4 py-3 rounded-lg bg-background border border-secondary-accent/20 focus:border-accent focus:outline-none transition-colors resize-none"
+                    class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors resize-none"
                     placeholder="Tell us about your project, challenge, or what you're looking to accomplish..."
                     required
                   ></textarea>
@@ -130,8 +130,8 @@
                       :class="[
                         'flex items-center justify-center px-4 py-2 rounded-lg border cursor-pointer transition-all',
                         form.budget === range
-                          ? 'border-accent bg-accent/10 text-accent'
-                          : 'border-secondary-accent/20 hover:border-accent/50'
+                          ? 'border-accent bg-accent/10 text-white'
+                          : 'border-gray-300 hover:border-accent/50'
                       ]"
                     >
                       {{ range }}
@@ -150,8 +150,8 @@
                       :class="[
                         'flex items-center justify-center px-4 py-2 rounded-lg border cursor-pointer transition-all',
                         form.timeframe === timeframe
-                          ? 'border-accent bg-accent/10 text-accent'
-                          : 'border-secondary-accent/20 hover:border-accent/50'
+                          ? 'border-accent bg-accent/10 text-white'
+                          : 'border-gray-300 hover:border-accent/50'
                       ]"
                     >
                       {{ timeframe }}
