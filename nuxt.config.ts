@@ -59,6 +59,6 @@ export default defineNuxtConfig({
       // environment variable.
       secretKey: '',
     },
-    NUXT_TWILIO_API_KEY: ''
+    NUXT_TWILIO_API_KEY: '' 
   }
 })
