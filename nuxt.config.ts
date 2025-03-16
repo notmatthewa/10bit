@@ -54,11 +54,9 @@ export default defineNuxtConfig({
     addValidateEndpoint: true
   },
   runtimeConfig: {
+    NUXT_TWILIO_API_KEY: '',
     turnstile: {
-      // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
-      // environment variable.
       secretKey: '',
     },
-    NUXT_TWILIO_API_KEY: ''
   }
 })
