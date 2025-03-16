@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', "nitro-cloudflare-dev", '@nuxtjs/i18n', '@nuxtjs/turnstile', '@nuxt/scripts'],
+  modules: ['@nuxtjs/tailwindcss', '@nuxtjs/google-fonts', "nitro-cloudflare-dev", '@nuxtjs/i18n', '@nuxtjs/turnstile', '@nuxt/scripts', '@nuxt/icon'],
   css: ['~/assets/css/main.css'],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     defaultLocale: 'en',
     strategy: 'prefix_except_default', // Uses /en/ and /es/
     detectBrowserLanguage: {
-      useCookie: true,
+      useCookie: false,
       cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
       fallbackLocale: 'en' // Fallback if detection fails
@@ -57,7 +57,8 @@ export default defineNuxtConfig({
     turnstile: {
       // This can be overridden at runtime via the NUXT_TURNSTILE_SECRET_KEY
       // environment variable.
-      secretKey: '0x4AAAAAABAC2kH2w4HVJ44mUCdznq-MJGc',
+      secretKey: '',
     },
+    NUXT_TWILIO_API_KEY: ''
   }
 })

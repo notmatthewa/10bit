@@ -6,13 +6,13 @@
     <p class="text-sm opacity-60 mb-2 mt-4">{{ $t('home.copyright') }}</p>
     <div class="flex justify-center items-center">
       <NuxtLink @click="changeLocale('en')" class="flex items-center gap-2 px-4 py-2 rounded text-xl">
-        🇺🇸
+        <Icon name="twemoji:flag-for-flag-united-states" />
       </NuxtLink>
       <span class="flex items-center gap-2 py-2 rounded text-xs">
         ❤️
       </span>
       <NuxtLink @click="changeLocale('es')" class="flex items-center gap-2 px-4 py-2 rounded text-xl">
-        🇲🇽
+        <Icon name="twemoji:flag-for-flag-mexico" />
       </NuxtLink>
     </div>
   </footer>

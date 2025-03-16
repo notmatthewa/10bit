@@ -1,10 +1,10 @@
 <template>
-  <a 
-    :href="href" 
+  <a
     class="font-medium transition-all duration-300 relative"
     :class="{ 'text-accent': active, 'text-text': !active }"
+    :href="localePath(href)"
   >
-    <slot></slot>
+    <span class="nav-hover"><slot></slot></span>
     <span 
       class="absolute left-0 bottom-[-2px] h-px bg-accent-gradient transition-all duration-300 nav-underline"
       :class="{ 'w-full': active, 'w-0': !active }"
@@ -13,6 +13,8 @@
 </template>
 
 <script setup>
+const localePath = useLocalePath()
+
 defineProps({
   href: {
     type: String,
@@ -28,5 +30,10 @@ defineProps({
 <style scoped>
 a:hover .nav-underline {
   width: 100%;
+  cursor: pointer;
+}
+
+a:hover .nav-hover {
+  cursor: pointer;
 }
 </style>
