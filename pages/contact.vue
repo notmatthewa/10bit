@@ -18,168 +18,203 @@
         <!-- Contact Form Section -->
         <section class="section-spacing">
           <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
-            <!-- Contact Form - 3 columns -->
+            <!-- Contact Form or Success Message - 3 columns -->
             <div class="lg:col-span-3 bg-secondary rounded-xl p-8 md:p-10 shadow-md">
-              <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
-
-              <form @submit.prevent="handleSubmit" class="space-y-6">
-                <!-- Name Fields -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label for="firstName" class="block text-sm font-medium">First Name</label>
-                    <input
-                      type="text"
-                      id="firstName"
-                      v-model="form.firstName"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                      placeholder="Your first name"
-                      required
-                    />
-                  </div>
-                  <div class="space-y-2">
-                    <label for="lastName" class="block text-sm font-medium">Last Name</label>
-                    <input
-                      type="text"
-                      id="lastName"
-                      v-model="form.lastName"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                      placeholder="Your last name"
-                      required
-                    />
-                  </div>
+              <!-- Success Message (shows after form submission) -->
+              <div v-if="formSubmitted" class="flex flex-col items-center justify-center py-8">
+                <div class="h-20 w-20 rounded-full bg-green-100 flex items-center justify-center text-green-500 mb-6">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                  </svg>
                 </div>
+                <h2 class="text-2xl font-bold mb-4 text-center">Thank You!</h2>
+                <p class="text-lg mb-6 text-center max-w-md">
+                  Your message has been sent successfully. We'll get back to you as soon as possible.
+                </p>
+                <button
+                  @click="resetForm"
+                  class="py-3 px-6 bg-gradient-to-r from-accent to-secondary-accent text-white font-bold rounded-lg hover:opacity-90 transition-opacity"
+                >
+                  Send Another Message
+                </button>
+              </div>
 
-                <!-- Email & Phone -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label for="email" class="block text-sm font-medium">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      v-model="form.email"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                      placeholder="you@example.com"
-                      required
-                    />
-                  </div>
-                  <div class="space-y-2">
-                    <label for="phone" class="block text-sm font-medium">Phone Number <span class="text-xs opacity-60">(Optional)</span></label>
-                    <input
-                      type="tel"
-                      id="phone"
-                      v-model="form.phone"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                      placeholder="(000) 000-0000"
-                    />
-                  </div>
-                </div>
+              <!-- Contact Form (hidden after submission) -->
+              <div v-else>
+                <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
 
-                <!-- Company & Project Type -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div class="space-y-2">
-                    <label for="company" class="block text-sm font-medium">Company <span class="text-xs opacity-60">(Optional)</span></label>
-                    <input
-                      type="text"
-                      id="company"
-                      v-model="form.company"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
-                      placeholder="Your company name"
-                    />
-                  </div>
-                  <div class="space-y-2">
-                    <label for="projectType" class="block text-sm font-medium">What can we help you with?</label>
-                    <select
-                      id="projectType"
-                      v-model="form.projectType"
-                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors appearance-none"
-                      required
-                    >
-                      <option value="" disabled selected>Select a service</option>
-                      <option value="data-migration">Data Migration & ETL</option>
-                      <option value="web-scraping">Web Scraping & Market Intelligence</option>
-                      <option value="automation">Business Process Automation</option>
-                      <option value="app-development">Custom App Development</option>
-                      <option value="security">Security Upgrades</option>
-                      <option value="emergency">Emergency Solution</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                <!-- Project Details -->
-                <div class="space-y-2">
-                  <label for="message" class="block text-sm font-medium">Project Details</label>
-                  <textarea
-                    id="message"
-                    v-model="form.message"
-                    rows="5"
-                    class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors resize-none"
-                    placeholder="Tell us about your project, challenge, or what you're looking to accomplish..."
-                    required
-                  ></textarea>
-                </div>
-
-                <!-- Budget Range -->
-                <div class="space-y-2">
-                  <label class="block text-sm font-medium">Budget Range <span class="text-xs opacity-60">(Optional)</span></label>
-                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div
-                      v-for="(range, index) in budgetRanges"
-                      :key="index"
-                      @click="form.budget = range"
-                      :class="[
-                        'flex items-center justify-center px-4 py-2 rounded-lg border cursor-pointer transition-all',
-                        form.budget === range
-                          ? 'border-accent bg-accent/10 text-white'
-                          : 'border-gray-300 hover:border-accent/50'
-                      ]"
-                    >
-                      {{ range }}
+                <form @submit.prevent="handleSubmit" class="space-y-6">
+                  <!-- Name Fields -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                      <label for="firstName" class="block text-sm font-medium">First Name</label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        v-model="form.firstName"
+                        class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
+                        :class="{'border-red-500': errors.firstName}"
+                        placeholder="Your first name"
+                        @blur="validateField('firstName')"
+                      />
+                      <p v-if="errors.firstName" class="text-red-500 text-sm mt-1">{{ errors.firstName }}</p>
+                    </div>
+                    <div class="space-y-2">
+                      <label for="lastName" class="block text-sm font-medium">Last Name</label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        v-model="form.lastName"
+                        class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
+                        :class="{'border-red-500': errors.lastName}"
+                        placeholder="Your last name"
+                        @blur="validateField('lastName')"
+                      />
+                      <p v-if="errors.lastName" class="text-red-500 text-sm mt-1">{{ errors.lastName }}</p>
                     </div>
                   </div>
-                </div>
 
-                <!-- Urgency -->
-                <div class="space-y-2">
-                  <label class="block text-sm font-medium">How soon do you need this solution?</label>
-                  <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-                    <div
-                      v-for="(timeframe, index) in timeframes"
-                      :key="index"
-                      @click="form.timeframe = timeframe"
-                      :class="[
-                        'flex items-center justify-center px-4 py-2 rounded-lg border cursor-pointer transition-all',
-                        form.timeframe === timeframe
-                          ? 'border-accent bg-accent/10 text-white'
-                          : 'border-gray-300 hover:border-accent/50'
-                      ]"
-                    >
-                      {{ timeframe }}
+                  <!-- Email & Phone -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                      <label for="email" class="block text-sm font-medium">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        v-model="form.email"
+                        class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
+                        :class="{'border-red-500': errors.email}"
+                        placeholder="you@example.com"
+                        @blur="validateField('email')"
+                      />
+                      <p v-if="errors.email" class="text-red-500 text-sm mt-1">{{ errors.email }}</p>
+                    </div>
+                    <div class="space-y-2">
+                      <label for="phone" class="block text-sm font-medium">Phone Number <span class="text-xs opacity-60">(Optional)</span></label>
+                      <input
+                        type="tel"
+                        id="phone"
+                        v-model="form.phone"
+                        class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
+                        placeholder="(000) 000-0000"
+                      />
                     </div>
                   </div>
-                </div>
 
-                <!-- Cloudflare Turnstile using Nuxt Module -->
-                <NuxtTurnstile v-model="token" />
+                  <!-- Company & Project Type -->
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="space-y-2">
+                      <label for="company" class="block text-sm font-medium">Company <span class="text-xs opacity-60">(Optional)</span></label>
+                      <input
+                        type="text"
+                        id="company"
+                        v-model="form.company"
+                        class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors"
+                        placeholder="Your company name"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label for="projectType" class="block text-sm font-medium">What can we help you with?</label>
+                      <select
+                        id="projectType"
+                        v-model="form.projectType"
+                        class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors appearance-none"
+                        :class="{'border-red-500': errors.projectType}"
+                        @blur="validateField('projectType')"
+                      >
+                        <option value="" disabled selected>Select a service</option>
+                        <option value="data-migration">Data Migration & ETL</option>
+                        <option value="web-scraping">Web Scraping & Market Intelligence</option>
+                        <option value="automation">Business Process Automation</option>
+                        <option value="app-development">Custom App Development</option>
+                        <option value="security">Security Upgrades</option>
+                        <option value="emergency">Emergency Solution</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <p v-if="errors.projectType" class="text-red-500 text-sm mt-1">{{ errors.projectType }}</p>
+                    </div>
+                  </div>
 
-                <!-- Submit Button -->
-                <div class="pt-4">
-                  <button
-                    type="submit"
-                    class="w-full py-4 px-6 bg-gradient-to-r from-accent to-secondary-accent text-white font-bold rounded-lg hover:opacity-90 transition-opacity"
-                    :disabled="isSubmitting || !turnstileToken"
-                  >
-                    <span v-if="!isSubmitting">Send Message</span>
-                    <span v-else class="flex items-center justify-center">
-                      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Processing...
-                    </span>
-                  </button>
-                </div>
-              </form>
+                  <!-- Project Details -->
+                  <div class="space-y-2">
+                    <label for="message" class="block text-sm font-medium">Project Details</label>
+                    <textarea
+                      id="message"
+                      v-model="form.message"
+                      rows="5"
+                      class="w-full px-4 py-3 rounded-lg bg-background border border-gray-300 focus:border-accent focus:outline-none transition-colors resize-none"
+                      :class="{'border-red-500': errors.message}"
+                      placeholder="Tell us about your project, challenge, or what you're looking to accomplish..."
+                      @blur="validateField('message')"
+                    ></textarea>
+                    <p v-if="errors.message" class="text-red-500 text-sm mt-1">{{ errors.message }}</p>
+                  </div>
+
+                  <!-- Impacts Range -->
+                  <div class="space-y-2">
+                    <label class="block text-sm font-medium">What's the estimated annual cost of this challenge to your business?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      <div
+                        v-for="(range, index) in impactCosts"
+                        :key="index"
+                        @click="selectImpact(range)"
+                        :class="[
+                          'flex items-center justify-center px-4 py-2 rounded-lg border cursor-pointer transition-all',
+                          form.impact === range
+                            ? 'border-accent bg-accent/10 text-white'
+                            : 'border-gray-300 hover:border-accent/50'
+                        ]"
+                      >
+                        {{ range }}
+                      </div>
+                    </div>
+                    <p v-if="errors.impact" class="text-red-500 text-sm mt-1">{{ errors.impact }}</p>
+                  </div>
+
+                  <!-- Urgency -->
+                  <div class="space-y-2">
+                    <label class="block text-sm font-medium">How soon do you need a solution?</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                      <div
+                        v-for="(timeframe, index) in timeframes"
+                        :key="index"
+                        @click="selectTimeframe(timeframe)"
+                        :class="[
+                          'flex items-center justify-center px-4 py-2 rounded-lg border cursor-pointer transition-all',
+                          form.timeframe === timeframe
+                            ? 'border-accent bg-accent/10 text-white'
+                            : 'border-gray-300 hover:border-accent/50'
+                        ]"
+                      >
+                        {{ timeframe }}
+                      </div>
+                    </div>
+                    <p v-if="errors.timeframe" class="text-red-500 text-sm mt-1">{{ errors.timeframe }}</p>
+                  </div>
+
+                  <!-- Cloudflare Turnstile using Nuxt Module -->
+                  <NuxtTurnstile v-model="token" />
+                  <p v-if="turnstileError" class="text-red-500 text-sm mt-1">{{ turnstileError }}</p>
+
+                  <!-- Submit Button -->
+                  <div class="pt-4">
+                    <button
+                      type="submit"
+                      class="w-full py-4 px-6 bg-gradient-to-r from-accent to-secondary-accent text-white font-bold rounded-lg hover:opacity-90 transition-opacity"
+                      :disabled="isSubmitting || !token"
+                    >
+                      <span v-if="!isSubmitting">Send Message</span>
+                      <span v-else class="flex items-center justify-center">
+                        <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                          <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                          <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        Processing...
+                      </span>
+                    </button>
+                  </div>
+                </form>
+              </div>
             </div>
 
             <!-- Contact Information - 2 columns -->
@@ -197,7 +232,7 @@
                     </div>
                     <div>
                       <h3 class="text-sm font-medium text-accent">Email</h3>
-                      <p class="mt-1">contact@10bittechnology.com</p>
+                      <p class="mt-1">contact@10bit.tech</p>
                     </div>
                   </div>
 
@@ -209,20 +244,7 @@
                     </div>
                     <div>
                       <h3 class="text-sm font-medium text-accent">Phone</h3>
-                      <p class="mt-1">(555) 123-4567</p>
-                    </div>
-                  </div>
-
-                  <div class="flex items-start">
-                    <div class="h-10 w-10 rounded-full bg-accent/10 flex items-center justify-center text-accent mr-4">
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h3 class="text-sm font-medium text-accent">Office Location</h3>
-                      <p class="mt-1">10 Technology Avenue<br />Innovation District<br />San Francisco, CA 94105</p>
+                      <p class="mt-1">(479) 345-4995</p>
                     </div>
                   </div>
                 </div>
@@ -233,7 +255,7 @@
                 <h2 class="text-2xl font-bold mb-4">Need Urgent Support?</h2>
                 <p class="mb-6">We specialize in emergency solutions with under-one-week turnarounds for critical business challenges.</p>
                 <a
-                  href="tel:5551234567"
+                  href="tel:4793454995"
                   class="inline-block w-full py-3 px-6 bg-white text-accent font-bold rounded-lg text-center hover:bg-opacity-90 transition-opacity"
                 >
                   Call Our Emergency Line
@@ -257,18 +279,18 @@
       </div>
     </main>
 
-    <footer class="py-12 px-[5%] text-center">
-      <p class="text-sm opacity-60">© 2025 10 Bit Technology. All rights reserved.</p>
-    </footer>
+    <Footer />
   </div>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue';
 
+// Form submission state
+const formSubmitted = ref(false);
+
 // Turnstile token - used with v-model in NuxtTurnstile
 const token = ref('');
-const turnstileToken = ref('');
 
 // Form data
 const form = reactive({
@@ -279,7 +301,18 @@ const form = reactive({
   company: '',
   projectType: '',
   message: '',
-  budget: '',
+  impact: '',
+  timeframe: ''
+});
+
+// Error messages
+const errors = reactive({
+  firstName: '',
+  lastName: '',
+  email: '',
+  projectType: '',
+  message: '',
+  impact: '',
   timeframe: ''
 });
 
@@ -287,12 +320,12 @@ const form = reactive({
 const turnstileError = ref('');
 const isSubmitting = ref(false);
 
-// Budget ranges
-const budgetRanges = [
-  'Under $5K',
+// Impact ranges
+const impactCosts = [
+  'Under $1K',
+  '$1K-$5K',
   '$5K-$10K',
-  '$10K-$25K',
-  '$25K+'
+  '$10K+'
 ];
 
 // Timeframe options
@@ -323,47 +356,124 @@ const faqs = [
   }
 ];
 
-// Handle Turnstile errors
-const handleTurnstileError = (error) => {
-  console.error('Turnstile error:', error);
-  turnstileError.value = 'Error during verification. Please try again.';
+// Clear all error messages
+const clearErrors = () => {
+  Object.keys(errors).forEach(key => {
+    errors[key] = '';
+  });
+};
+
+// Validate a single field
+const validateField = (fieldName) => {
+  if (!form[fieldName]) {
+    errors[fieldName] = `Please enter your ${fieldName.replace(/([A-Z])/g, ' $1').toLowerCase()}`;
+    return false;
+  }
+
+  // Email validation
+  if (fieldName === 'email' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+    errors.email = 'Please enter a valid email address';
+    return false;
+  }
+
+  errors[fieldName] = '';
+  return true;
+};
+
+// Helper functions for selection-based fields
+const selectImpact = (impact) => {
+  form.impact = impact;
+  errors.impact = '';
+};
+
+const selectTimeframe = (timeframe) => {
+  form.timeframe = timeframe;
+  errors.timeframe = '';
+};
+
+// Validate all fields
+const validateForm = () => {
+  let isValid = true;
+
+  // Clear all errors first
+  clearErrors();
+
+  // Validate required fields
+  ['firstName', 'lastName', 'email', 'projectType', 'message'].forEach(field => {
+    if (!validateField(field)) {
+      isValid = false;
+    }
+  });
+
+  // Validate selection fields
+  if (!form.impact) {
+    errors.impact = 'Please select an estimated cost range';
+    isValid = false;
+  }
+
+  if (!form.timeframe) {
+    errors.timeframe = 'Please select a timeframe';
+    isValid = false;
+  }
+
+  // Validate turnstile (uncomment if needed)
+  if (!token.value) {
+    turnstileError.value = 'Please complete the verification';
+    isValid = false;
+  }
+
+  return isValid;
+};
+
+// Reset form and show the form again
+const resetForm = () => {
+  // Reset form data
+  Object.keys(form).forEach(key => {
+    form[key] = '';
+  });
+
+  // Clear errors
+  clearErrors();
+
+  // Reset token
+  token.value = '';
+
+  // Show form again
+  formSubmitted.value = false;
 };
 
 // Form submission handler
 const handleSubmit = async () => {
-  // Validate Turnstile token
-  if (!token.value) {
-    turnstileError.value = 'Please complete the verification.';
+  // Validate all fields before submitting
+  if (!validateForm()) {
+    // Scroll to the first error
+    const firstErrorField = document.querySelector('.border-red-500');
+    if (firstErrorField) {
+      firstErrorField.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
     return;
   }
 
   try {
     isSubmitting.value = true;
 
-    // This would be replaced with your actual form submission logic
-    // Here's an example of how you would send the form data to your server using Nuxt's $fetch
-
-    // const response = await $fetch('/api/contact', {
-    //   method: 'POST',
-    //   body: {
-    //     ...form,
-    //     token: token.value
-    //   }
-    // });
-
-    // Simulate submission delay
-    await new Promise(resolve => setTimeout(resolve, 1000));
-
-    // Reset form and Turnstile widget
-    Object.keys(form).forEach(key => {
-      form[key] = '';
+    // Send form data to the API
+    const response = await $fetch('/api/contactFormSubmit', {
+      method: 'POST',
+      body: {
+        ...form,
+        token: token.value
+      }
     });
 
-    // Reset turnstile token
-    token.value = '';
-
     // Show success message
-    alert('Thank you for your message! We will get back to you soon.');
+    formSubmitted.value = true;
+
+    // Scroll to the top of the form area
+    const formContainer = document.querySelector('.lg\\:col-span-3');
+    if (formContainer) {
+      formContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 
   } catch (error) {
     console.error('Error submitting form:', error);

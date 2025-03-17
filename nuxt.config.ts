@@ -54,9 +54,10 @@ export default defineNuxtConfig({
     addValidateEndpoint: true
   },
   runtimeConfig: {
-    NUXT_TWILIO_API_KEY: '',
+    twilio_api_key: '',
     turnstile: {
       secretKey: '',
     },
+    form_debug: false
   }
 })

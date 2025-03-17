@@ -5,8 +5,11 @@
     <main class="pt-32 px-[5%] pb-20">
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-8 max-w-7xl mx-auto">
         <!-- header -->
-        <header class="text-center mt-12 mb-12">
-          <h1 class="text-5xl font-bold mb-4">{{ $t('developers.header') }}</h1>
+        <header class="text-center mb-12">
+          <h1
+            class="text-5xl md:text-6xl font-extrabold tracking-tighter leading-tight mb-6 bg-gradient-to-r from-accent to-secondary-accent bg-clip-text text-transparent">
+            {{ $t('developers.title') }}
+          </h1>
           <p class="text-lg opacity-80">{{ $t('developers.subheader') }}</p>
         </header>
 
