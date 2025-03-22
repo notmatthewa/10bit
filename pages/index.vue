@@ -11,10 +11,10 @@
           {{ $t('home.description') }}
         </p>
         <div class="flex items-center gap-4 animate-fadeIn opacity-0" style="animation-delay: 0.6s;">
-          <a href="#" class="inline-flex items-center bg-accent text-white px-8 py-4 rounded gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20">
+          <a href="/contact" class="inline-flex items-center bg-accent text-white px-8 py-4 rounded gap-2 font-semibold transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-accent/20">
             {{ $t('home.contact') }}
           </a>
-          <a href="#" class="inline-flex items-center bg-transparent text-text px-8 py-4 rounded gap-2 font-semibold transition-all duration-300 border border-text hover:-translate-y-0.5 hover:bg-secondary">
+          <a href="/solutions" class="inline-flex items-center bg-transparent text-text px-8 py-4 rounded gap-2 font-semibold transition-all duration-300 border border-text hover:-translate-y-0.5 hover:bg-secondary">
             {{ $t('home.projects') }}
           </a>
         </div>

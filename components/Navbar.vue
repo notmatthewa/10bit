@@ -7,7 +7,7 @@
       <img src="~/assets/logos/Logo Glyph.png" alt="10 Bit Technology" class="block sm:hidden w-8">
     </div>
     <nav>
-      <ul class="flex items-center md:gap-8 gap-4">
+      <ul class="flex items-center md:gap-8 gap-3">
         <li v-for="item in navItems" :key="item.text">
           <NavLink
             :href="item.href"
@@ -35,7 +35,7 @@ const navItems = [
   { text: 'Home', href: '/' },
   { text: 'Solutions', href: '/solutions' },
   { text: 'Developers', href: '/developers' },
-  { text: 'Contact Us', href: '/contact' }
+  { text: 'Contact', href: '/contact' }
 ];
 
 // Scroll effect for header

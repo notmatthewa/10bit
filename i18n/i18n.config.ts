@@ -10,7 +10,7 @@ export default defineI18nConfig(() => ({
         },
         description: "Pioneering solutions with cutting-edge technology to transform the digital experience of tomorrow.",
         contact: "Contact us →",
-        projects: "See projects",
+        projects: "See solutions",
         why_choose: "Why 10 Bit Technology?",
         features: {
           solution_title: "Wide Range of Solutions",
