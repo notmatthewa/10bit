@@ -14,15 +14,20 @@ interface ContactFormData {
   token: string;
 }
 
-// Project type mapping
+// Project type mapping — keys match the Brand 2.0 service trinity in i18n.config.ts.
+// Legacy keys are kept so historical/in-flight submissions still resolve cleanly.
 const projectTypeMap: Record<string, string> = {
+  'audit': 'Automation Audit ($1,500 starter)',
+  'automation': 'Business Process Automation',
+  'data': 'Data & Integrations',
+  'custom_app': 'Custom App Development',
+  'emergency': 'Emergency / Under-one-week rebuild',
+  'other': 'Other',
+  // Legacy values (pre Brand 2.0)
   'data-migration': 'Data Migration & ETL',
   'web-scraping': 'Web Scraping & Market Intelligence',
-  'automation': 'Business Process Automation',
   'app-development': 'Custom App Development',
   'security': 'Security Upgrades',
-  'emergency': 'Emergency Solution',
-  'other': 'Other'
 };
 
 export default defineEventHandler(async (event) => {

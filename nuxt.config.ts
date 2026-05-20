@@ -16,11 +16,17 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
-      title: '10 Bit Technology | Digital Innovation',
+      title: '10 Bit Technology | Custom automation for NWA small business',
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'description', content: 'Pioneering solutions with cutting-edge technology to transform the digital experience of tomorrow.' }
+        { name: 'description', content: 'Bespoke automation and custom software for Northwest Arkansas small businesses. Bilingual team. Fixed pricing. Built in weeks, not quarters. Based in Bentonville / Rogers / Fayetteville / Springdale.' },
+        { name: 'keywords', content: 'Northwest Arkansas, NWA, Bentonville, Rogers, Fayetteville, Springdale, bilingual, automation, custom software, web scraping, ETL, Walmart supplier, small business, bespoke, fixed price' },
+        { property: 'og:title', content: '10 Bit Technology | Custom automation for NWA small business' },
+        { property: 'og:description', content: 'Bilingual NWA-local team. Fixed-price custom automation and software. Built in weeks, not quarters.' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:locale', content: 'en_US' },
+        { property: 'og:locale:alternate', content: 'es_US' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
